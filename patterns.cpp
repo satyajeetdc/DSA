@@ -3,20 +3,170 @@ using namespace std;
 
 int main() {
 
+  // Butterfly Pattern
+  // *             *
+  // * *         * *
+  // * * *     * * *
+  // * * * * * * * *
+  // * * * * * * * *
+  // * * *     * * *
+  // * *         * *
+  // *             *
+
+  // Floy'd Triangle
+  // 1
+  // 2 3
+  // 4 5 6
+  // 7 8 9 10
+  // 11 12 13 14 15
+  // 16 17 18 19 20 21
+
+  // Solid Half Diamond
+  // *
+  // * *
+  // * * *
+  // * * * *
+  // * * *
+  // * *
+  // *
+
   // Fancy Pattern
+  //  * * * * * * * * 1 * * * * * * * *
+  //  * * * * * * * 2 * 2 * * * * * * *
+  //  * * * * * * 3 * 3 * 3 * * * * * *
+  //  * * * * 4 * 4 * 4 * 4 * 4 * * * *
+  //  * * * 5 * 5 * 5 * 5 * 5 * 5 * * *
+
+  // Numeric palindrome equilateral pyramid
+  //     1
+  //    121
+  //   12321
+  //  1234321
+  // 123454321
+
+  // Numeric hollow inverted hald pyramid
+  // 1 2 3 4 5
+  // 2     5
+  // 3   5
+  // 4 5
+  // 5
+
+  // ABCBA triangle
 
   int n;
   cin >> n;
-  for(int r=0; r<n; r++) {
-    for(int c=0;c<2*r+1; c++) {
-      if(c%2 !=0) {
-        cout << "*";
-      } else {
-        cout << r+1;
-      }
+
+  for (int r = 0; r < n; r++) {
+    char ch;
+    for (int c = 0; c < r + 1; c++) {
+      ch = c + 'A';
+      cout << ch;
+    }
+    for (char character = ch - 1; character >= 'A'; character--) {
+      cout << character;
     }
     cout << endl;
   }
+
+  // // ABC triangle
+
+  // int n;
+  // cin >> n;
+
+  // for(int r=0; r<n; r++) {
+  //   for(int c=0; c<r+1; c++) {
+  //     char ch = c + 'A';
+  //     cout << ch;
+  //   }
+  //   cout << endl;
+  // }
+
+  // // Hollow Number Half Pyramid
+
+  // int n;
+  // cin >> n;
+
+  // for(int r=0; r<n; r++) {
+  //   for(int c=0;c<r+1; c++) {
+  //     if(c==0 || c==r || r==n-1) {
+  //       cout << r+1 << " ";
+  //     } else {
+  //       cout << "  ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+  // // Inverted Hollow Number Half Pyramid
+
+  // int n;
+  // cin >> n;
+
+  // for(int r=0; r<n; r++) {
+  //   for(int c=0;c<n-r; c++) {
+  //     if(c==0 || c==n-r-1 || r==0) {
+  //       cout << r+1 << " ";
+  //     } else {
+  //       cout << "  ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+  // // Inverted Hollow Left Half Pyramid
+
+  // int n;
+  // cin >> n;
+
+  // for(int r=0; r<n; r++) {
+  //   for(int c=0;c<n-r; c++) {
+  //     if(c==0 || c==n-r-1 || r==0) {
+  //       cout << "* ";
+  //     } else {
+  //       cout << "  ";
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+
+  // // Flip fancy Pattern
+
+  // int n;
+  // cin >> n;
+  // for (int r = 0; r < n; r++) {
+  //   for (int c = 0; c < 2 * r + 1; c++) {
+  //     if (c % 2 != 0) {
+  //       cout << "*";
+  //     } else {
+  //       cout << r + 1;
+  //     }
+  //   }
+  //   cout << endl;
+  // }
+  // for (int r = n - 1; r >= 1; r--) {
+  //   for (int c = 1; c <= 2 * r - 1; c++) {
+  //     if (c % 2 != 0)
+  //       cout << r;
+  //     else
+  //       cout << "*";
+  //   }
+  //   cout << endl;
+  // }
+
+  // Fancy Pattern
+
+  // int n;
+  // cin >> n;
+  // for(int r=0; r<n; r++) {
+  //   for(int c=0;c<2*r+1; c++) {
+  //     if(c%2 !=0) {
+  //       cout << "*";
+  //     } else {
+  //       cout << r+1;
+  //     }
+  //   }
+  //   cout << endl;
+  // }
 
   // // Flipped solid dimond
 
