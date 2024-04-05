@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+bool isPrime(int num) {
+  if (num <= 1)
+    return false;
+  for (int i = 2; i <= sqrt(num); ++i)
+    if (num % i == 0)
+      return false;
+  return true;
+}
+
 int evenORodd(int num) {
   return ((num & 1) == 0);
 }
@@ -71,5 +80,11 @@ int main() {
   else
     cout << number << " is odd." << endl;
 
+  // Prime number
+  int number;
+  cout << "Enter a number: ";
+  cin >> number;
+  cout << number << (isPrime(number) ? " is prime." : " is not prime.") << endl;
+  
   return 0;
 }
