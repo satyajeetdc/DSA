@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+int evenORodd(int num) {
+  return ((num & 1) == 0);
+}
+
 int sumOfeven(int n) {
   int sum = 0;
   for (int i = 2; i <= n; i += 2) {
@@ -57,6 +61,15 @@ int main() {
   count(10);
   prime(13);
   cout << sumOfeven(100) << endl;
+
+  // even or odd using bitwise operator
+  int number;
+  cout << "Enter a number: ";
+  cin >> number;
+  if (evenORodd(number))
+    cout << number << " is even." << endl;
+  else
+    cout << number << " is odd." << endl;
 
   return 0;
 }
