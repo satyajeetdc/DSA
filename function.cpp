@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 
 bool isPrime(int num) {
   if (num <= 1)
