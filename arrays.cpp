@@ -30,14 +30,48 @@ void countOnesAndZeros(int arr[], int size) {
   cout << "The number of zeros are: " << zero << endl;
 }
 
+// MINIMUM NUMBER IN AN ARRAY
+void findMin(int arr[], int size) {
+  int min = INT_MAX;
+  for(int i=0; i<size; i++) {
+    if(arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  cout << "Mininmum number is array is : " << min << endl;
+}
+
+// REVERSE AN ARRAY
+
+void reverseArray(int arr[], int size) {
+  int returnArray[size];
+  for(int i = 0; i<size; i++) {
+    returnArray[i] = arr[size-i-1];
+  }
+  for(int i = 0; i<size; i++) {
+    cout << returnArray[i] << endl;
+  }
+}
+
+
 
 
 int main() {
 
   // ARRAYS & FUNCTIONS
-  int arr[] = {1,0,1,0,1,0,1,0,1,0,1};
-  int size = sizeof(arr) / sizeof(int);
-  countOnesAndZeros(arr, size);
+
+    int a[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
+  int size = sizeof(a) / sizeof(int);
+
+  reverseArray(a, size);
+
+  
+  // findMin(a, size);
+
+  
+  // int arr[] = {1,0,1,0,1,0,1,0,1,0,1};
+  // int size = sizeof(arr) / sizeof(int);
+  // countOnesAndZeros(arr, size);
   
 
 
