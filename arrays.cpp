@@ -77,6 +77,17 @@ void reverseArray2(int arr[], int size) {
   }
 }
 
+// EXTREME PRINT IN AN ARRAY
+void extremePrint(int arr[], int size) {
+  for (int left = 0, right = size - 1; left <= right; left++, right--) {
+    if(left == right) {
+      cout << arr[left] << endl;
+      return;
+    }
+    cout << arr[left] << " " << arr[right] << " ";
+  }
+}
+
 
 
 
@@ -87,7 +98,8 @@ int main() {
     int a[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
   int size = sizeof(a) / sizeof(int);
 
-
+  extremePrint(a, size);
+  
   reverseArray2(a, size);
   reverseArray1(a, size);
   reverseArray(a, size);
