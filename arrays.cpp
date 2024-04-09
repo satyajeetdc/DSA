@@ -53,6 +53,17 @@ void reverseArray(int arr[], int size) {
   }
 }
 
+void reverseArray1(int arr[], int size) {
+  int left = 0;
+  int right = size-1;
+  while(left < right) {
+    swap(arr[left], arr[right]);  
+  }
+  for(int i = 0; i<size; i++) {
+    cout << arr[i] << endl;
+  }
+}
+
 
 
 
@@ -63,6 +74,7 @@ int main() {
     int a[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
   int size = sizeof(a) / sizeof(int);
 
+  reverseArray1(a, size);
   reverseArray(a, size);
 
   
