@@ -88,10 +88,86 @@ void extremePrint(int arr[], int size) {
   }
 }
 
+// UNIQUE ELEMENT IN AN ARRAY
+int getUnique(int a[], int size) {
+  int ans = 0;
+  for (int i = 0; i < size; i++) {
+    ans = ans ^ a[i];
+  }
+  return ans;
+}
+
+// PRINT ALL PAIRS
+
+void printAllPairs(int a[], int size) {
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      cout << "( " << a[i] << ", " << a[j] << " )" << endl;
+    }
+  }
+}
+
+// TRIPLETS
+
+void printTriplets(int a[], int size) {
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      for (int k = 0; k < size; k++) {
+        cout << "(" << a[i] << ", " << a[j] << ", " << a[k] << ")" << endl;
+      }
+    }
+  }
+}
+
+// Sort 0's and 1's
+void sortZeroandOne(int arr[], int size) {
+  int zeroCount = 0;
+  int oneCount = 0;
+  for (int i = 0; i < size; i++) {
+    if (arr[i] == 0) {
+      zeroCount++;
+    }
+    if (arr[i] == 1) {
+      oneCount++;
+    }
+  }
+  int i = 0;
+  for (; i < zeroCount; i++) {
+    arr[i] = 0;
+  }
+
+  for (int j = i; j < size; j++) {
+    arr[j] = 1;
+  }
+}
+
+
+
 
 
 
 int main() {
+
+    int arr[] = {0, 1, 0, 1, 0, 0, 1, 0, 0, 1};
+  int size = 10;
+  sortZeroandOne(arr, size);
+
+  for (int i = 0; i < size; i++) {
+    cout << arr[i] << " ";
+  }
+
+  // int a[] = {10, 20, 30};
+  // int size = 3;
+  // printTriplets(a, size);
+
+  // int a[] = {10, 20, 30};
+  // int size = 3;
+  // printAllPairs(a, size);
+
+  // int a[] = {1, 1, 2, 2, 3, 3, 10, 5, 5};
+  // int size = 9;
+  // int n = getUnique(a, size);
+  // cout << "The unique element is : " << n << endl;
 
   // ARRAYS & FUNCTIONS
 
