@@ -151,6 +151,83 @@ void rightShiftByOne(int arr[], int size){
   arr[0] = temp;
 }
 
+void print2Darray(int arr[][3], int row, int col) {
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+      cout << arr[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+
+void colWisePrint(int arr[][4], int row, int col) {
+  for (int i = 0; i < col; i++) {
+    for (int j = 0; j < row; j++) {
+      cout << arr[j][i] << " ";
+    }
+    cout << endl;
+  }
+}
+
+bool findTarget(int arr[][4], int row, int col, int target) {
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+     if(arr[i][j] == target) {
+       return true;
+     }
+    }
+  }
+  return false;
+} 
+
+void maxElement(int arr[][4], int row, int col) {
+  int max = INT_MIN;
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+     if(arr[i][j] > max) {
+       max = arr[i][j];
+     }
+    }
+  }
+  cout << "Max element is: " << max << endl;
+}
+
+
+void minElement(int arr[][4], int row, int col) {
+  int min = INT_MAX;
+  for (int i = 0; i < row; i++) {
+    for (int j = 0; j < col; j++) {
+     if(arr[i][j] < min) {
+       min = arr[i][j];
+     }
+    }
+  }
+  cout << "Min element is: " << min << endl;
+}
+
+void rowSum(int arr[][4], int row, int col) {
+  int sum = 0;
+  for (int i = 0; i < row; i++) {
+    for(int j = 0; j < col; j++) {
+      sum += arr[i][j];
+    }
+    cout << "Sum of row " << i << " is: " << sum << endl;
+    sum = 0;
+  }
+}
+
+void colSum(int arr[][4], int row, int col) {
+  int sum = 0;
+  for (int i = 0; i < col; i++) {
+    for(int j = 0; j < row; j++) {
+      sum += arr[j][i];
+    }
+    cout << "Sum of col " << i << " is: " << sum << endl;
+    sum = 0;
+  }
+}
+
+
 
 
 
@@ -160,7 +237,81 @@ void rightShiftByOne(int arr[], int size){
 int main() {
 
 
-    int arr[] = {10, 11, 12, 13, 14, 15};
+   // Column-wise sum of a 2D array
+  int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  int row = 3;
+  int col = 4;
+  colSum(b, row, col);
+
+
+  // Row-wise sum of a 2D array
+  int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  int row = 3;
+  int col = 4;
+  rowSum(b, row, col);
+
+
+  
+  //Min element in a 2D array
+  int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {900, 10, 110, 12}};
+  int row = 3;
+  int col = 4;
+  minElement(b, row, col);
+  
+
+  
+  //Max element in a 2D array
+  int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {900, 10, 110, 12}};
+  int row = 3;
+  int col = 4;
+  maxElement(b, row, col);
+
+  // Linear search in a 2D array
+  int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  int row = 3;
+  int col = 4;
+  int target = 100;
+  if(findTarget(b, row, col, target)) {
+    cout << "Found" << endl;
+  } else {
+    cout << "Not Found" << endl;
+  }
+  
+
+  int arr[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+
+  int brr[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+  // atleast column size is required and same applies when
+  // we pass the 2D array as a function parameter
+
+  print2Darray(arr, 3, 4);
+  colWisePrint(arr, 3, 4);
+
+  // Input in a 2-D array row-wise
+
+  int a[3][3];
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      cin >> a[i][j];
+    }
+  }
+  
+
+  // Input in a 2-D array column-wise
+
+  int a[3][3];
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      cin >> a[j][i];
+    }
+  }
+
+  print2Darray(a, 3, 3);
+
+
+  
+
+  int arr[] = {10, 11, 12, 13, 14, 15};
   int size = 6;
   rightShiftByOne(arr, size);
   for (int i = 0; i < size; i++) {
