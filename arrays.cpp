@@ -2,20 +2,20 @@
 #include <limits.h>
 using namespace std; 
 
-// void printArray(int arr[], int size) {
-//   for(int i = 0; i < size; i++) {
-//     cout << arr[i] << " ";
-//   }
-// }
+void printArray(int arr[], int size) {
+  for(int i = 0; i < size; i++) {
+    cout << arr[i] << " ";
+  }
+}
 
-// bool linearSearch(int arr[], int size, int target) {
-//   for(int i = 0; i < size; i++) {
-//       if(arr[i] == target) {
-//         return true;
-//       }
-//     }
-//   return false;
-// }
+bool linearSearch(int arr[], int size, int target) {
+  for(int i = 0; i < size; i++) {
+      if(arr[i] == target) {
+        return true;
+      }
+    }
+  return false;
+}
 
 void countOnesAndZeros(int arr[], int size) {
   int one = 0;
@@ -227,6 +227,19 @@ void colSum(int arr[][4], int row, int col) {
   }
 }
 
+void transpose(int arr[][3], int row, int col){
+  cout << "Originally: " << endl;
+  print2Darray(arr, row, col);
+  cout << endl;
+  for(int i = 0; i < row; i++) {
+    for(int j = i; j < col; j++) {
+      swap(arr[i][j], arr[j][i]);
+    }
+  }
+  cout << "After Transpose: " << endl;
+  print2Darray(arr, row, col);
+}
+
 
 
 
@@ -236,6 +249,14 @@ void colSum(int arr[][4], int row, int col) {
 
 int main() {
 
+
+  // Transpose
+  int b[][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  int row = 3;
+  int col = 3;
+  transpose(b, row, col);
+
+  
 
    // Column-wise sum of a 2D array
   int b[][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
@@ -326,18 +347,18 @@ int main() {
     cout << arr[i] << " ";
   }
 
-  // int a[] = {10, 20, 30};
-  // int size = 3;
-  // printTriplets(a, size);
+  int a[] = {10, 20, 30};
+  int size = 3;
+  printTriplets(a, size);
 
-  // int a[] = {10, 20, 30};
-  // int size = 3;
-  // printAllPairs(a, size);
+  int a[] = {10, 20, 30};
+  int size = 3;
+  printAllPairs(a, size);
 
-  // int a[] = {1, 1, 2, 2, 3, 3, 10, 5, 5};
-  // int size = 9;
-  // int n = getUnique(a, size);
-  // cout << "The unique element is : " << n << endl;
+  int a[] = {1, 1, 2, 2, 3, 3, 10, 5, 5};
+  int size = 9;
+  int n = getUnique(a, size);
+  cout << "The unique element is : " << n << endl;
 
   // ARRAYS & FUNCTIONS
 
@@ -351,126 +372,126 @@ int main() {
   reverseArray(a, size);
 
   
-  // findMin(a, size);
+  findMin(a, size);
 
   
-  // int arr[] = {1,0,1,0,1,0,1,0,1,0,1};
-  // int size = sizeof(arr) / sizeof(int);
-  // countOnesAndZeros(arr, size);
+  int arr[] = {1,0,1,0,1,0,1,0,1,0,1};
+  int size = sizeof(arr) / sizeof(int);
+  countOnesAndZeros(arr, size);
   
 
 
 
   
-  // int target = 10;
-  // int arr[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
-  // int size = sizeof(arr) / sizeof(int);
-  // bool check = linearSearch(arr, size, target);
-  // if(check) { 
-  //   cout << "Target found" << endl;
-  // } else {
-  //   cout << "Target not found" << endl;
-  // }
+  int target = 10;
+  int arr[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
+  int size = sizeof(arr) / sizeof(int);
+  bool check = linearSearch(arr, size, target);
+  if(check) { 
+    cout << "Target found" << endl;
+  } else {
+    cout << "Target not found" << endl;
+  }
   
   
-  // int arr[5] = {1, 2, 3, 4, 5};
-  // int size = 5;
-  // printArray(arr, size);
+  int arr[5] = {1, 2, 3, 4, 5};
+  int size = 5;
+  printArray(arr, size);
 
 
 
   
 
   // LINEAR SEARCH IN AN ARRAY
-  // int target = 10;
-  // int arr[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
-  // bool flag = false;
-  // int position = 0;
+  int target = 10;
+  int arr[] = {22, 23, 24, 25, 26, 27, 28, 29, 10, 23};
+  bool flag = false;
+  int position = 0;
 
-  // for(int i = 0; i < 10; i++) {
-  //   if(arr[i] == target) {
-  //     flag = true;
-  //     position = i;
-  //     break;
-  //   }
-  // }
+  for(int i = 0; i < 10; i++) {
+    if(arr[i] == target) {
+      flag = true;
+      position = i;
+      break;
+    }
+  }
 
-  // if(flag) {
-  //   cout << "Target found at index " << position << endl;
-  // } else {
-  //   cout << "Target not found" << endl;
-  // }
+  if(flag) {
+    cout << "Target found at index " << position << endl;
+  } else {
+    cout << "Target not found" << endl;
+  }
 
   
 
-  // // Question 
-  // int arr[10];
-  // int n = 10;
-  // // taking input
-  // for(int i = 0; i<n; i++) {
-  //   cin >> arr[i];
-  // }
-  // // double-up
-  // for(int i = 0; i<n; i++) {
-  //   arr[i] = 2 * arr[i];
-  // }
-  // // output
-  // for(int i = 0; i<n; i++) {
-  //   cout << arr[i] << " ";
-  // }
+  // Question 
+  int arr[10];
+  int n = 10;
+  // taking input
+  for(int i = 0; i<n; i++) {
+    cin >> arr[i];
+  }
+  // double-up
+  for(int i = 0; i<n; i++) {
+    arr[i] = 2 * arr[i];
+  }
+  // output
+  for(int i = 0; i<n; i++) {
+    cout << arr[i] << " ";
+  }
 
     
 
 
   // INDEXING IN ARRAY : 0 to (N-1)
   
-  // int a[] = {1,2,3,4,5};
-  // cout << a[3] << endl;
-  // for(int i=0;i<5;i++) {
-  //   cout << a[i] << " ";
-  // }
+  int a[] = {1,2,3,4,5};
+  cout << a[3] << endl;
+  for(int i=0;i<5;i++) {
+    cout << a[i] << " ";
+  }
 
-  // int arr[5];
-  // int n = 5;
-  // for(int i = 0; i<n; i++) {
-  //   cin >> arr[i];
-  // }
+  int arr[5];
+  int n = 5;
+  for(int i = 0; i<n; i++) {
+    cin >> arr[i];
+  }
 
-  // cout << arr[3];
+  cout << arr[3];
 
 
-
-  
-  // int n;
-  // cin >> n;
-  // int arr[n]; // BAD PRACTICE
-  // cout << sizeof(arr) << endl;
 
   
-  // int a[] = {};
-  // cout << sizeof(a) << endl;
+  int n;
+  cin >> n;
+  int arr[n]; // BAD PRACTICE
+  cout << sizeof(arr) << endl;
 
-  // int ab[2] = {2,3,4,5,6}; // excess element error
-  // int a[] = {1,2,3,4,5};
-  // int abc[5] = {1,2,3}; // rest of places will be filled with 0
   
-  // int a[50];
-  // cout << "Address of a : " << &a << endl;
-  // int arr[0];
-  // cout << "Address of a : " << arr << endl;
-  // cout << sizeof(arr) << endl;
+  int a[] = {};
+  cout << sizeof(a) << endl;
+
+  int ab[2] = {2,3,4,5,6}; // excess element error
+  int a[] = {1,2,3,4,5};
+  int abc[5] = {1,2,3}; // rest of places will be filled with 0
+  
+  int a[50];
+  cout << "Address of a : " << &a << endl;
+  int arr[0];
+  cout << "Address of a : " << arr << endl;
+  cout << sizeof(arr) << endl;
   
 
-  // int num[10];
-  // char ch[10];
-  // bool b[10];
-  // float f[10];
-  // short s[10];
-  // cout << sizeof(num) << endl;
-  // cout << sizeof(ch) << endl;
-  // cout << sizeof(b) << endl;
-  // cout << sizeof(f) << endl;
-  // cout << sizeof(s) << endl;
+  int num[10];
+  char ch[10];
+  bool b[10];
+  float f[10];
+  short s[10];
+  cout << sizeof(num) << endl;
+  cout << sizeof(ch) << endl;
+  cout << sizeof(b) << endl;
+  cout << sizeof(f) << endl;
+  cout << sizeof(s) << endl;
 
   return 0;
 }
